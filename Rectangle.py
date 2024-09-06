@@ -46,3 +46,11 @@ class Rectangle(Shape):
             return Rectangle(self.width + other.height, self.height)
         else:
             raise ValueError("No matching edge to join")
+
+
+assert Rectangle(3, 4).area() == 12  # General case
+assert Rectangle(0, 10).area() == 0  # Edge case with zero width
+assert Rectangle(3, 4).circumference() == 14  # General case
+assert Rectangle(0, 10).circumference() == 20  # Edge case with zero width
+assert Rectangle(3, 4).join(Rectangle(3, 5)).height == 9  # Matching width
+assert Rectangle(2, 3).join(Rectangle(3, 2)).height == 6  # Edge case: swapping dimensions

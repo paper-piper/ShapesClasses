@@ -25,3 +25,13 @@ class Circle(Shape):
         :return: the circumference
         """
         return 2 * math.pi * self.radius
+
+
+# Asserting area calculation
+assert Circle(5).area() == math.pi * 5 ** 2
+# Asserting circumference calculation
+assert Circle(5).circumference() == 2 * math.pi * 5
+# Edge case: Zero radius
+assert Circle(0).area() == 0
+assert Circle(0).circumference() == 0
+
